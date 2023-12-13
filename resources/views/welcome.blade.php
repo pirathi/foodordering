@@ -9,17 +9,17 @@
     <header class="row">
         @include('includes.header')
     </header>
-@include('includes.Sidebar')
-    {{-- <div id="main" class="row">
+    @include('includes.Sidebar')
+    <div id="main" class="row">
 
             @yield('content')
 
-    </div> --}}
+    </div>
     <div class="content-wrapper">
         @include('includes.contentheader')
     
         <!-- Main content -->
-        <section class="content">
+        <section class="contents">
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">

@@ -12,9 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', 'HomeController@index');
+    Route::get('/home', 'HomeController@home');
+    
+    //menu items
+    Route::resource('menu-items', 'ProductController');
+
+    //Restaurant
+    Route::resource('restaurants', 'RestaurantController');
+
+    //category
+    Route::resource('category', 'CategoryController');
+    
+    
+});
+
+
+
